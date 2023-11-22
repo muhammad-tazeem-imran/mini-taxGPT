@@ -1,4 +1,4 @@
-.innerText a {
+.conversationHTML a {
   color: rgb(var(--info));
   border: 1px solid rgb(var(--info));
   border-radius: 100%;
@@ -11,12 +11,12 @@
   text-align: center;
 }
 
-.innerText ol li {
+.conversationHTML ol li {
   list-style: decimal;
   margin-left: 1.25em;
 }
 
-.innerText ul li {
+.conversationHTML ul li {
   list-style: disc;
   margin-left: 1.5em;
 }

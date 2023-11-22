@@ -1,0 +1,29 @@
+.sourcesHTML a {
+  color: rgb(var(--info));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--info));
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.sourcesHTML ol li {
+  list-style: decimal;
+  margin-left: 1.25em;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.sourcesHTML ul li {
+  list-style: disc;
+  margin-left: 1.5em;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.sourcesHTML p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}

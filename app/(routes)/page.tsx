@@ -23,7 +23,7 @@ type ChatType = {
 export default function Home() {
   const [query, setQuery] = useState<string>('');
   const [chat, setChat] = useState<ChatType[]>([]);
-  const [sources, setSources] = useState<string[]>([]);
+  const [sources, setSources] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -50,6 +50,7 @@ export default function Home() {
         type: 'answer' as const,
         value: data.contentHtml,
       }
+      console.log(data)
       setChat([
         ...chat,
         question,

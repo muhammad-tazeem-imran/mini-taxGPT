@@ -1,0 +1,12 @@
+.typingAnimation {
+  display: inline-block;
+  position: relative;
+}
+
+.textContent {
+  display: inline-block;
+}
+
+.typingContent {
+  white-space: nowrap;
+}

@@ -46,7 +46,7 @@ function IconButton({
   }
 
   return (
-    <button className={`${styles.button} ${defaultStyles.button}`} onClick={handleClick}>
+    <button className={`component_IconBtn ${styles.button} ${defaultStyles.button}`} onClick={handleClick}>
       <span className={`${styles.icon} ${defaultStyles.icon}`}>
         {loading ? <div className='loader' /> : iconEl}
       </span>

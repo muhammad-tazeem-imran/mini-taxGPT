@@ -1,14 +1,14 @@
-.loader {
+.component_IconBtn .loader {
   border: 4px solid rgb(var(--secondary));
   border-top: 4px solid rgb(var(--tertiary));
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  animation: spin 2s linear infinite;
+  animation: btn_spin 2s linear infinite;
   cursor: auto;
 }
 
-@keyframes spin {
+@keyframes btn_spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
