@@ -1,0 +1,22 @@
+.innerText a {
+  color: rgb(var(--info));
+  border: 1px solid rgb(var(--info));
+  border-radius: 100%;
+  font-size: 0.75rem;
+  inset-inline-start: 32px;
+  height: 1.5em;
+  width: 1.5em;
+  display: inline-block;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.innerText ol li {
+  list-style: decimal;
+  margin-left: 1.25em;
+}
+
+.innerText ul li {
+  list-style: disc;
+  margin-left: 1.5em;
+}

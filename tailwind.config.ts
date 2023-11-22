@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -14,6 +13,14 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    colors: {
+      'primary': 'rgb(220, 244, 88)',
+      'secondary': 'rgb(51, 51, 49)',
+      'tertiary': 'rgb(143, 143, 143)',
+      'dark': 'rgb(13, 13, 13)',
+      'light': 'rgb(255, 255, 255)',
+      'info': 'rgb(69, 120, 187)',
+    }
   },
   plugins: [],
 }
