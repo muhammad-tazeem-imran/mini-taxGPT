@@ -5,31 +5,49 @@ import { FiChevronsRight } from "react-icons/fi";
 import {
   ChangeEvent,
   ChangeEventHandler,
+  FocusEvent,
   MouseEventHandler,
   useRef,
+  useState,
 } from "react";
 import IconButton from "../IconButton";
 
 type Props = {
-  variant?: 'Primary' | 'Secondary';
   onClick: MouseEventHandler,
   onChange: ChangeEventHandler,
   loading: boolean,
+  placeholder: string,
 }
 
 function SearchBar({
   onChange,
   onClick,
   loading,
+  placeholder,
 }: Props) {
+  const [focused, setFocused] = useState(false);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     if (textAreaRef.current) {
       textAreaRef.current.style.height = 'auto';
       const newHeight = Math.min(event.target.scrollHeight, 104)
-      textAreaRef.current.style.height = `${newHeight}px` ;
+      if (newHeight == 104) {
+        textAreaRef.current.style.height = `${newHeight}px`;
+      } else {
+        textAreaRef.current.style.height = `${newHeight + 8}px`;
+      }
     }
     onChange(event)
+  };
+
+  const handleFocus = (event: FocusEvent<HTMLTextAreaElement>) => {
+    setFocused(true);
+  };
+  const handleBlur = (event: FocusEvent<HTMLTextAreaElement>) => {
+    if (textAreaRef.current && event.target.value == '') {
+      setFocused(false);
+    }
   }
 
   return (
@@ -43,13 +61,13 @@ function SearchBar({
         className={clsx(
           "block",
           "w-full",
+          "h-20",
           "p-4",
+          "py-6",
           "my-2",
           "pr-20",
           "bg-dark",
           "placeholder-tertiary",
-          "text-sm",
-          "text-light",
           "break-words",
           "border-2",
           "border-primary",
@@ -57,9 +75,11 @@ function SearchBar({
           "outline-none",
           "resize-none",
         )}
-        placeholder="Ask your test questions...."
+        placeholder={placeholder}
         rows={1}
         onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
 
       <span
@@ -77,6 +97,7 @@ function SearchBar({
           iconEl={<FiChevronsRight />}
           onClick={onClick}
           loading={loading}
+          variant={focused ? 'Primary' : 'Secondary'}
         />
       </span>
     </div>

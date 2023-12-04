@@ -19,7 +19,7 @@ const Header = () => {
           className={clsx(
             'z-10',
             'flex',
-            'max-w-6xl',
+            'max-w-[90rem]',
             'w-full',
             'justify-between',
             'ml-auto',

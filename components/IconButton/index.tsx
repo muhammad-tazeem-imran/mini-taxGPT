@@ -17,17 +17,17 @@ interface ButtonStyles {
 
 const variantStyles = {
   Primary: {
-    button: 'bg-primary p-1',
+    button: 'bg-primary',
     icon: '',
   },
   Secondary: {
-    button: '',
-    icon: '',
+    button: 'bg-secondary',
+    icon: 'text-tertiary',
   },
 }
 
 const defaultStyles = {
-  button: 'font-semibold rounded-full cursor-pointer',
+  button: 'font-semibold rounded-full cursor-pointer p-1',
   icon: 'text-3xl font-light text-dark',
 }
 

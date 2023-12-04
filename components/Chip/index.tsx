@@ -13,6 +13,7 @@ function Chip({ label }: Props) {
         'p-1.5',
         'w-fit',
         'capitalize',
+        'font-onest',
       )}
     >
       {label}

@@ -11,7 +11,7 @@ import {
   DONATIONS,
 } from '@/app/constants/queryTags';
 import Conversation from "./components/Conversation";
-import Sources from "./components/Sources";
+// import Sources from "./components/Sources";
 import SearchBar from '@/components/SearchBar';
 import Dropdown from "@/components/Dropdown";
 
@@ -49,6 +49,7 @@ export default function Home() {
       const answer = {
         type: 'answer' as const,
         value: data.contentHtml,
+        sources: data.sources,
       }
       console.log(data)
       setChat([
@@ -70,18 +71,19 @@ export default function Home() {
         id='route-root'
         className={clsx(
           'z-10',
-          'max-w-6xl',
+          'max-w-[800px]',
           'w-full',
           'lg:flex',
           'flex-col',
         )}
       >
         <div className='-translate-y-12'>
-          <h1 className='text-5xl text-center mb-2'>Your tax questions answered by TaxGPT</h1>
+          <h1 className='text-[40px] font-semibold text-center mb-2 font-onest '>Your tax questions answered by TaxGPT</h1>
           <SearchBar
             onChange={handleQueryChange}
             onClick={handleQueryAsked}
             loading={loading}
+            placeholder="Ask your test questions...."
           />
           <h4 className='my-2'>Try asking about</h4>
           <div className={clsx('flex gap-6')}>
@@ -101,7 +103,7 @@ export default function Home() {
       id='route-root'
       className={clsx(
         'z-10',
-        'max-w-6xl',
+        'max-w-[90rem]',
         'w-full',
         'lg:flex',
         'flex-col',
@@ -112,8 +114,6 @@ export default function Home() {
         className={clsx(
           'query',
           'relative',
-          'grid',
-          'grid-cols-3',
           'w-full',
           'justify-between',
           'flex-1',
@@ -128,10 +128,8 @@ export default function Home() {
             'flex-col',
             'align-between',
             'justify-between',
-            'px-4',
             'pt-2',
             'pb-10',
-            'col-span-2',
           )}
         >
           <div
@@ -140,15 +138,20 @@ export default function Home() {
               'overflow-y-hidden',
             )}
           >
-            <Conversation
-              chat={chat}
+            <Conversation chat={chat} />
+          </div>
+          <div
+            className={clsx(
+              'max-w-[800px]',
+            )}
+          >
+            <SearchBar
+              onChange={handleQueryChange}
+              onClick={handleQueryAsked}
+              loading={loading}
+              placeholder="Ask your follow-up questions...."
             />
           </div>
-          <SearchBar
-            onChange={handleQueryChange}
-            onClick={handleQueryAsked}
-            loading={loading}
-          />
         </div>
 
         <div
@@ -160,7 +163,6 @@ export default function Home() {
             'py-2',
           )}
         >
-          <Sources sources={sources}/>
         </div>
       </div>
 
