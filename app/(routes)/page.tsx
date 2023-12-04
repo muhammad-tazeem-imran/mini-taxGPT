@@ -86,7 +86,7 @@ export default function Home() {
             placeholder="Ask your test questions...."
           />
           <h4 className='my-2'>Try asking about</h4>
-          <div className={clsx('flex gap-6')}>
+          <div className={clsx('flex gap-4 flex-wrap')}>
             <Dropdown label={HOMEOWNER} />
             <Dropdown label={FOREIGN_INVESTMENTS} />
             <Dropdown label={SELF_EMPLOYMENT} />

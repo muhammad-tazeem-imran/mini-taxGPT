@@ -11,6 +11,7 @@ function Dropdown({ label }: Props) {
     <div
       className={clsx(
         'bg-dark',
+        'font-onest',
         'text-tertiary',
         'border',
         'border-tertiary',
@@ -20,7 +21,7 @@ function Dropdown({ label }: Props) {
         'w-fit',
         'capitalize',
         'cursor-pointer',
-        'px-4',
+        'px-2',
         'py-1',
         // Hover
         'hover:bg-secondary'
